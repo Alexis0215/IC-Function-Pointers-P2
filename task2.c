@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 #define ops 5
 
 /* IMPLEMENT ME: Declare your functions here */
@@ -13,15 +15,19 @@ void exitprogram(int a, int b);
 int main (void)
 { 
 	/* IMPLEMENT ME: Insert your algorithm here */
+  bool running = true;
+  while(running == true){
+    
   int (*ptr[ops])(int,int)={add,subtract,multiply,divide};
   int choice;
   int a,b;
-  printf("Enter your choice: 0 to add, 1 to subtract, 2 to multiply, 3 to divide, 4 to exit program\n");
+  printf("Enter your choice: 0:add | 1:subtract | 2:multiply | 3:divide | 4:exit\n");
   scanf("%d",&choice);
   printf("Enter two numbers:\n");
   scanf("%d %d", &a, &b);
   printf("%d",ptr[choice](a,b));
-	return 0;
+    
+  }
 }
 
 /* IMPLEMENT ME: Define your functions here */
